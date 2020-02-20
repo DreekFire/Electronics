@@ -19,10 +19,11 @@ Two electrodes will be placed on either side of the wearer’s head. These elect
 In order to measure the amplitude of Gamma and Beta waves, we use a high pass filter with a cutoff frequency of 14 Hz, which is approximately the lower bound for Beta waves. This also has the convenient effect of removing any DC components from our signal. Next, the signal is sent through a full bridge rectifier to convert it to DC, along with a capacitor to smooth the signal.
 We now have a DC signal with a voltage that represents the amplitude of Gamma and Beta waves in the wearer’s brain. We use a comparator to determine if the signal exceeds a certain threshold. Then, whenever the comparator output changes, the transition is detected by a differentiator circuit which activates an H-bridge that powers a pair of micro DC motors to actuate the flaps.
 Here is the intended circuit diagram:
+
 ## Parts List
 ### 1 Instrumentation Amplifier: AD623ARZ
 One of a series of instrumentation amplifiers made by Analog Devices
-AD623 is the model number, ARZ refer to quality under Analog Devices’ naming scheme, packaging, and RoHS compliance, respectively. A is the lower of two grades, Z is compliant, and I’m not sure what R means.
+AD623 is the model number, ARZ refer to quality under Analog Devices’ naming scheme, packaging, and RoHS compliance, respectively. A is the lower of two grades, Z is compliant, and R refers to tray or tube packaging.
 https://www.digikey.com/product-detail/en/AD623ARZ/AD623ARZ-ND/644106 - DigiKey link - cheaper but unknown delivery speeds or shipping costs, $4.53
 ### 3 Operational Amplifiers: uA741
 A commonly used OpAmp made by Texas Instruments.
