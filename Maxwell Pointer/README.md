@@ -17,10 +17,10 @@ Each of three coils is powered by AC at a different frequency. We use the Fourie
 ### Math
 #### Setup
 Defining a coordinate system centered on the generating coils and with axes pointing along the coil normals, we find that the magnetic field at position <x, y, z> is
-<img src="https://latex.codecogs.com/svg.latex?B_x = B_T<3x^2/r^5 - 1/R^3, 3xy/R^5, 3xz/R^5>"/> from the coil parallel to <1, 0, 0>
-<img src="https://latex.codecogs.com/svg.latex?B_y = B_T<3xy/R^5, 3y^2/r^5 - 1/R^3, 3yz/R^5>"/> from the coil parallel to <0, 1, 0>
-<img src="https://latex.codecogs.com/svg.latex?B_z = B_T<3xz/R^5, 3yz/R^5, 3z^2/r^5 - 1/R^3>"/> from the coil parallel to <0, 0, 1>
-Where <img src="https://latex.codecogs.com/svg.latex?B_T = nIA(\mu - \mu_0)/4\pi"/>, where I is the current flowing through the coil, A is the area of the coil, n is the number of turns in the coil, mu is the permiability of the core material, and mu_0 is the permeability of free space.
+<img src="https://latex.codecogs.com/svg.latex?B_x%3DB_T%3C%5Cfrac%7B3x%5E2%7D%7Br%5E5%7D-%5Cfrac%7B1%7D%7BR%5E3%7D%2C%5Cfrac%7B3xy%7D%7BR%5E5%7D%2C%5Cfrac%7B3xz%7D%7BR%5E5%7D%3E"/> from the coil parallel to <1, 0, 0>
+<img src="https://latex.codecogs.com/svg.latex?B_y%3DB_T%3C%5Cfrac%7B3xy%7D%7BR%5E5%7D%2C%5Cfrac%7B3y%5E2%7D%7Br%5E5%7D-%5Cfrac%7B1%7D%7BR%5E3%7D%2C%5Cfrac%7B3yz%7D%7BR%5E5%7D%3E"/> from the coil parallel to <0, 1, 0>
+<img src="https://latex.codecogs.com/svg.latex?B_z%3DB_T%3C%5Cfrac%7B3xz%7D%7BR%5E5%7D%2C%5Cfrac%7B3yz%7D%7BR%5E5%7D%2C%5Cfrac%7B3z%5E2%7D%7Br%5E5%7D-%5Cfrac%7B1%7D%7BR%5E3%7D%3E"/> from the coil parallel to <0, 0, 1>
+Where <img src="https://latex.codecogs.com/svg.latex?B_T%3D%5Cfrac%7B%5Cmu_0nIA%7D%7B4%5Cpi%7D%282-%5Cfrac%7B%5Cmu_0%7D%7B%5Cmu%7D%29"/>, where I is the current flowing through the coil, A is the area of the coil, n is the number of turns in the coil, mu is the permiability of the core material, and mu_0 is the permeability of free space.
 #### Finding Position
 While these formulas provide the magnetic field at point (x, y, z) relative to the standard basis, the measured values are relative to the basis defined by the sensor. Since the sensing coils are orthogonal to each other, if we define the sensor basis as consisting of unit vectors parallel to each sensor axis, then the change-of-basis matrix is orthonormal, and thus vector magnitude is preserved. Therefore, although the magnetometer cannot directly measure B_x, it can measure the magnitude of B_x.
 Following the computations done in Hu et. al, from the equations  
