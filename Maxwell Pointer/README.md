@@ -23,7 +23,7 @@ Defining a coordinate system centered on the generating coils and with axes poin
 Where <img src="https://latex.codecogs.com/svg.latex?B_T = nIA(\mu - \mu_0)/4\pi"/>, where I is the current flowing through the coil, A is the area of the coil, n is the number of turns in the coil, mu is the permiability of the core material, and mu_0 is the permeability of free space.
 #### Finding Position
 While these formulas provide the magnetic field at point (x, y, z) relative to the standard basis, the measured values are relative to the basis defined by the sensor. Since the sensing coils are orthogonal to each other, if we define the sensor basis as consisting of unit vectors parallel to each sensor axis, then the change-of-basis matrix is orthonormal, and thus vector magnitude is preserved. Therefore, although the magnetometer cannot directly measure B_x, it can measure the magnitude of B_x.
-Following the computations done in Hu et. al, from the equations
+Following the computations done in Hu et. al, from the equations  
 <img src="https://latex.codecogs.com/svg.latex?%7CB_x%7C%5E2%3D%7CB_T%7C%5E2%28%5Cfrac%7B3x%5E2%7D%7BR%5E8%7D&plus;%5Cfrac%7B1%7D%7BR%5E6%7D%29"/>  
 <img src="https://latex.codecogs.com/svg.latex?%7CB_y%7C%5E2%3D%7CB_T%7C%5E2%28%5Cfrac%7B3y%5E2%7D%7BR%5E8%7D&plus;%5Cfrac%7B1%7D%7BR%5E6%7D%29"/>  
 <img src="https://latex.codecogs.com/svg.latex?%7CB_z%7C%5E2%3D%7CB_T%7C%5E2%28%5Cfrac%7B3z%5E2%7D%7BR%5E8%7D&plus;%5Cfrac%7B1%7D%7BR%5E6%7D%29"/>  
@@ -32,7 +32,7 @@ We can compute that
 <img src="https://latex.codecogs.com/svg.latex?x%3D%5Cpm%5Cfrac%7B%5Csqrt%7B%5Cfrac%7B%7CB_x%7C%5E2%7D%7BB_T%5E2%7D-%5Cfrac%7BB%5E2%7D%7B6B_T%5E2%7D%7D%7D%7B%5Csqrt%7B3%7D%28%5Cfrac%7BB%5E2%7D%7B6B_T%5E2%7D%29%5E%7B%5Cfrac%7B2%7D%7B3%7D%7D%7D"/>  
 <img src="https://latex.codecogs.com/svg.latex?y%3D%5Cpm%5Cfrac%7B%5Csqrt%7B%5Cfrac%7B%7CB_y%7C%5E2%7D%7BB_T%5E2%7D-%5Cfrac%7BB%5E2%7D%7B6B_T%5E2%7D%7D%7D%7B%5Csqrt%7B3%7D%28%5Cfrac%7BB%5E2%7D%7B6B_T%5E2%7D%29%5E%7B%5Cfrac%7B2%7D%7B3%7D%7D%7D"/>  
 <img src="https://latex.codecogs.com/svg.latex?z%3D%5Cpm%5Cfrac%7B%5Csqrt%7B%5Cfrac%7B%7CB_z%7C%5E2%7D%7BB_T%5E2%7D-%5Cfrac%7BB%5E2%7D%7B6B_T%5E2%7D%7D%7D%7B%5Csqrt%7B3%7D%28%5Cfrac%7BB%5E2%7D%7B6B_T%5E2%7D%29%5E%7B%5Cfrac%7B2%7D%7B3%7D%7D%7D"/>  
-Continuing to follow Hu et. al, we know that since angles are preserved, the dot products between pairs of vectors relative to either basis must be the same. We can then determine the signs of x, y, and z based on the signs of <img src="https://latex.codecogs.com/svg.latex?B_x%5Ccdot%20B_y%5Ctext%7B%2C%7D%20B_x%5Ccdot%20B_z%5Ctext%7B%2C%20and%20%7DB_y%5Ccdot%20B_z"/>.
+Continuing to follow Hu et. al, we know that since angles are preserved, the dot products between pairs of vectors relative to either basis must be the same. We can then determine the signs of x, y, and z based on the signs of <img src="https://latex.codecogs.com/svg.latex?B_x%5Ccdot%20B_y%5Ctext%7B%2C%20%7DB_x%5Ccdot%20B_z%5Ctext%7B%2C%20and%20%7DB_y%5Ccdot%20B_z"/>
 
 #### Finding Orientation
 Finally, we can determine the change-of-basis matrix to convert from the standard basis to the sensor basis. As previously mentioned, it is orthonormal, so it is a rotation matrix which we will call R.
