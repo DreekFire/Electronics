@@ -24,19 +24,22 @@ Where B_T is nIA(mu - mu_0)/4pi, where I is the current flowing through the coil
 #### Finding Position
 While these formulas provide the magnetic field at point (x, y, z) relative to the standard basis, the measured values are relative to the basis defined by the sensor. Since the sensing coils are orthogonal to each other, if we define the sensor basis as consisting of unit vectors parallel to each sensor axis, then the change-of-basis matrix is orthonormal, and thus vector magnitude is preserved. Therefore, although the magnetometer cannot directly measure B_x, it can measure the magnitude of B_x.
 Following the computations done in Hu et. al, from the equations
-|B_x|^2 = |B_T|^2(3x^2/R^8 + 1/R^6)
-|B_y|^2 = |B_T|^2(3y^2/R^8 + 1/R^6)
-|B_z|^2 = |B_T|^2(3z^2/R^8 + 1/R^6)
+<img src="https://latex.codecogs.com/svg.latex?|B_x|^2 = |B_T|^2(3x^2/R^8 + 1/R^6)"/>  
+<img src="https://latex.codecogs.com/svg.latex?|B_y|^2 = |B_T|^2(3y^2/R^8 + 1/R^6)"/>  
+<img src="https://latex.codecogs.com/svg.latex?|B_z|^2 = |B_T|^2(3z^2/R^8 + 1/R^6)"/>  
 We can compute that
-x = +-sqrt(|B_x|^2/B_T^2 - B^2/6B_T^2)/(sqrt(3)(B^2/6B_T^2)^2/3)
-y = +-sqrt(|B_y|^2/B_T^2 - B^2/6B_T^2)/(sqrt(3)(B^2/6B_T^2)^2/3)
-z = +-sqrt(|B_z|^2/B_T^2 - B^2/6B_T^2)/(sqrt(3)(B^2/6B_T^2)^2/3)
-Continuing to follow Hu et. al, we know that since angles are preserved, the dot products between pairs of vectors relative to either basis must be the same. We can then determine the signs of x, y, and z based on the signs of B_x\*B_y, B_x\*B_z, and B_y*B_z.
+<img src="https://latex.codecogs.com/svg.latex?x = +-sqrt(|B_x|^2/B_T^2 - B^2/6B_T^2)/(sqrt(3)(B^2/6B_T^2)^2/3)"/>  
+<img src="https://latex.codecogs.com/svg.latex?y = +-sqrt(|B_y|^2/B_T^2 - B^2/6B_T^2)/(sqrt(3)(B^2/6B_T^2)^2/3)"/>  
+<img src="https://latex.codecogs.com/svg.latex?z = +-sqrt(|B_z|^2/B_T^2 - B^2/6B_T^2)/(sqrt(3)(B^2/6B_T^2)^2/3)"/>  
+Continuing to follow Hu et. al, we know that since angles are preserved, the dot products between pairs of vectors relative to either basis must be the same. We can then determine the signs of x, y, and z based on the signs of <img src="https://latex.codecogs.com/svg.latex?B_x\cdotB_y\text{,} B_x\cdotB_z\text{, and }B_y\cdotB_z"/>.
 
 #### Finding Orientation
 Finally, we can determine the change-of-basis matrix to convert from the standard basis to the sensor basis. As previously mentioned, it is orthonormal, so it is a rotation matrix which we will call R.
 R right multiplied by the standard basis field vectors results in the sensor basis vectors, which is what our magnetometer measures. Therefore, R is the matrix with the measured vectors as rows right multiplied by the inverse of the matrix with the standard basis vectors as rows.
-Thus, the position of the generating coils relative to the sensor basis is -R<x, y, z> and their orientation is Re_1, Re_2, and Re_3.
+Thus, the position of the generating coils relative to the sensor basis is  
+<img src="https://latex.codecogs.com/svg.latex?-R<x, y, z>"/>  
+and their orientation is  
+<img src="https://latex.codecogs.com/svg.latex?Re_1\text{, }Re_2\text{, and}|Re_3"/>.
 
 #### Least-Squares Regression
 Our computations resulted in an R^3 vector for position along with an R^3 vector for orientation. In total, there are six unknowns, but nine equations—each of the sensor axes measures a value for each of the generating coils. In other words, this is an overconstrained system. While we could use only two coils, three will improve accuracy.
