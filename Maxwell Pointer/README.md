@@ -43,7 +43,10 @@ and their orientation is
 <img src="https://latex.codecogs.com/svg.latex?Re_1%5Ctext%7B%2C%20%7DRe_2%5Ctext%7B%2C%20and%20%7DRe_3"/>.
 
 #### Least-Squares Regression
-Our computations resulted in an R^3 vector for position along with an R^3 vector for orientation. In total, there are six unknowns, but nine equations—each of the sensor axes measures a value for each of the generating coils. In other words, this is an overconstrained system. While we could use only two coils, three will improve accuracy.
+Our computations resulted in a 3-vector for position along with a 3-vector for orientation. In total, there are six unknowns, but nine equations—the sensor measures a 3-vector for each generating coil. In other words, this is an overconstrained system. While we could use only two coils, three will improve accuracy.
+
+### Circuit
+The computations we did depend on being able to isolate the signal from each generating coil. If the coils were fed by a DC signal, this would be impossible as we would only get a single reading. Similarly, multiple AC signals at the same frequency are indistinguishable. Therefore, each coil must be powered by an AC signal with a distinct frequency. Our frequency is limited to 50Hz as the sampling rate of our phone's magnetometer is only 100Hz. We want to maximize the rate at which we can compute new positions for the pen. Thus, we want the frequencies to be spaced far apart so that we can resolve them with a shorter DFT but we want the lowest frequency to be high enough that the sample contains at least one full wavelength.
 
 ## Bibliography
 Hu, C., Song, S., Wang, X., Meng, M. Q. H., & Li, B. (2012). A novel positioning and orientation system based on three-axis magnetic coils. _IEEE Transactions on Magnetics, 48_(7), 2211–2219. https://doi.org/10.1109/TMAG.2012.2188537
