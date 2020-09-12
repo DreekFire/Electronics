@@ -1,4 +1,4 @@
-# Maxwell Pointer
+# Floating Point
 Using a smartphone magnetometer to track a magnetic stylus in 3D space
 
 ## Purpose
